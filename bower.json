@@ -19,6 +19,8 @@
     "angular-ui-router": "ui-router#^0.3.0",
     "angular-ui": "^0.4.0",
     "angular-sanitize": "^1.5.5",
-    "bootstrap": "^3.3.6"
+    "bootstrap": "^3.3.6",
+    "js-data": "^2.9.0",
+    "js-data-http": "^2.2.2"
   }
 }

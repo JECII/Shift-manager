@@ -1,4 +1,5 @@
 (function() {
+
     angular.module('shiftManager')
     .config(function(DSFirebaseAdapterProvider) {
         DSFirebaseAdapterProvider.defaults.basePath = 'https://keeprio.firebaseio.com/';
@@ -10,4 +11,6 @@
         // but we want to make it the default
         DS.registerAdapter('firebase', DSFirebaseAdapter, { default: true });
     })
+
+
 } ())

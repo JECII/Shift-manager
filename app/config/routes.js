@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 (function(){
 	angular.module('shiftManager')
@@ -7,18 +8,34 @@
 				.state('home', {
 					url: '',
 					template: '<div class="content"><home-component></home-component></div>'
+=======
+(function(){
+	angular.module('shiftManager')
+		.config(function($stateProvider, $urlRouterProvider){
+	
+			$stateProvider
+				.state('home', {
+					url: '',
+					template: '<div class="content"><keeps-component></keeps-component></div>'
+>>>>>>> 79232fbd6197a6e6173c35797a88b85f4006efcb
 				})
 				.state('auth', {
 					abstract: true,
 					template: '<div class="content"><ui-view></ui-view></div>',
 					resolve: {
+<<<<<<< HEAD
 						isAuthed: function(AuthService, $state){
 							if(!AuthService.getAuth()){
+=======
+						isAuthed: function(MemberService, $state){
+							if(!MemberService.getAuth()){
+>>>>>>> 79232fbd6197a6e6173c35797a88b85f4006efcb
 								return $state.go('home')
 							}
 						}
 					}
 				})
+<<<<<<< HEAD
 				.state('auth.members', {
 					url: '/members',
 					template: '<members-component></members-component>'
@@ -51,5 +68,19 @@
                     url: '/updates',
                     template: '<updates-component></update-component>'
                 })
+=======
+				.state('auth.', {
+					url: '/members',
+					template: '<members-component></members-component>'
+				})
+				.state('auth.', {
+					url: '/keeps',
+					template: '<keeps-component></keeps-component>'
+				})
+				.state('auth.', {
+					url: '/keep',
+					template: '<keep-component></keep-component>'
+				})
+>>>>>>> 79232fbd6197a6e6173c35797a88b85f4006efcb
 		})
 }())

@@ -25,6 +25,9 @@
     "angular-ui-calendar": "^1.0.1"
   },
   "resolutions": {
-    "angular": "^1.5.5"
+    "angular": "^1.5.5",
+    "js-data-angular": "^3.2.1",
+    "js-data-firebase": "^2.1.1",
+    "firebase": "2.x"
   }
 }

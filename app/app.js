@@ -1,1 +1,1 @@
-var app= angular.module('shiftManager', []);
+var app= angular.module('shiftManager', ["ui.calendar"]);

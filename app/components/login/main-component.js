@@ -5,9 +5,9 @@
             controller: MainController,
         })
         
-        .service('MemberService', function (FBREF) {
+        .service('MemberService', function () {
 			var as = this;
-			var db = new Firebase(FBREF);
+			var db = new Firebase('https://keeprio.firebaseio.com/');
 			var _member = {};
 
 			as.setMember = function (member) {
@@ -25,10 +25,10 @@
 			}
 		})
 
-	function AuthController($scope, $state, FBREF, MemberService) {
+	function AuthController($scope, $state, MemberService) {
 
 		var ac = this;
-		var db = new Firebase(FBREF);
+		var db = new Firebase('https://keeprio.firebaseio.com/');
 
 		ac.$onInit = activate;
 

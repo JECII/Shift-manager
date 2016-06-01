@@ -6,7 +6,7 @@ var path = require('path');
 var api = require('./api');
 
 app.use(bodyParser.json());
-app.use(express.static('app'));
+app.use(express.static('public'));
 app.use('/api', api.router);
 
 app.get('/', function(req, res) {

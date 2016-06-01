@@ -3,101 +3,112 @@
 	var path = require('path');	
 	var uuid = require('node-uuid');	
 	var JSData = require('js-data');	
-	var DSNedbAdapter = require('js-data-nedb');
+	var DSSqlAdapter = require('js-data-sql');
 	
 	var store = new JSData.DS();
-	var adapter = new DSNedbAdapter();
-
-	store.registerAdapter('nedb', adapter, { default: true });
-
-	var List = store.defineResource({
-		name: 'list',
-		filepath: path.join(__dirname, '/data/listData.db'),
-		relations: {
-			hasMany: {
-				card: {
-					localField: 'cards',
-					foreignKey: 'listId'
-				}
+	// var schemator = new Schemator();
+	var adapter = new DSSqlAdapter({
+		lient: 'mysql',
+			acquireConnectionTimeout: 10000,
+			connection: {
+				host:"127.0.0.1",
+				port:3306,
+				user:"root",
+				password:"Thursday66",
+				database:"friends"
 			}
-		}
-	});	
+	});
+
+	store.registerAdapter('sql', adapter, { default: true });
+
+	// var Manager = store.defineResource({
+	// 	name: 'manager',
+	// 	filepath: path.join(__dirname, '/data/managerData.db'),
+	// 	relations: {
+	// 		hasMany: {
+	// 			employee: {
+	// 				localField: 'employees',
+	// 				foreignKey: 'managerId'
+	// 			}
+	// 		}
+	// 	}
+	// });	
 	
-	var Card = store.defineResource({
-		name: 'card',
-		filepath: path.join(__dirname, '/data/cardData.db'),
+	var Employee = store.defineResource({
+		name: 'employee',
+		filepath: path.join(__dirname, '/data/employeeData.db'),
 		relations: {
 			belongsTo: {
-				list: {
-					localField: 'list',
-					foreignKey: 'listId'
+				employees: {
+					localField: 'employee',
+					foreignKey: 'employeeId'
 				}
 			}
 		}
 	});	
 
-	function getLists() {
+	function getEmployee() {
 
 		var params = {};
 		
 		var options = {
-			with: ['card']
+			with: ['employee']
 		};
 		
-		return List.findAll(params, options);	
+		return Employees.findAll(params, options);	
 	}
 	
-	function addList(name, description) {
+	// function addManager(name, description) {
 
-		return List.create({
-			id: uuid.v4(),
-			name: name
-		});			
-	}	
+	// 	return Manager.create({
+	// 		id: uuid.v4(),
+	// 		name: name
+	// 	});			
+	// }	
 	
-	function saveList(list) {
+	// function saveManager(manager) {
 
-		return List.update(list.Id, list);				
-	}	
+	// 	return Manager.update(manager.Id, manager);				
+	// }	
 	
-	function deleteList(list) {
+	// function deleteManager(manager) {
 
-		return List.destroy(list.Id);				
-	}	
+	// 	return Manager.destroy(manager.Id);				
+	// }	
 	
-	function getCards() {
+	function getEmployees() {
 		
-		return Card.findAll();	
+		return Employee.findAll();	
 	}
 	
-	function addCard(listId, summary, detail) {
+	function addEmployee(employeeId, summary, detail) {
 
-		return Card.create({
+		return Employee.create({
 			id: uuid.v4(),
-			listId: listId,
+			managerId: employeeId,
 			summary: summary,
 			detail: detail
 		});		
 	}	
 	
-	function saveCard(card) {
+	function saveEmployee(employee) {
 
-		return Card.update(card.Id, card);				
+		return Employees.update(employee.Id, employee);				
 	}	
 	
-	function deleteCard(card) {
+	function deleteEmployee(employee) {
 
-		return Card.destroy(card.Id);				
+		return Employee.destroy(employee.Id);				
 	}	
 	
 	module.exports = {
-		getLists: getLists,
-		addList: addList,
-		saveList: saveList,
-		deleteList: deleteList,
-		getCards: getCards,
-		addCard: addCard,
-		saveCard: saveCard,
-		deleteCard: deleteCard
+		// getManagers: getManagers,
+		// addManager: addManager,
+		// saveManager: saveManager,
+		// deleteManager: deleteManager,
+		getEmployees: getEmployees,
+		addEmployee: addEmployee,
+		saveEmployee: saveEmployee,
+		deleteEmployee: deleteEmployee
 	};
 })();

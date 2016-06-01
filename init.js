@@ -1,5 +1,12 @@
-(function(){
 
-angular.module('shiftManager',['ui.calender','firebase'])
-  
+(function(){
+    
+    angular.module('shiftManager', [
+        'ui.router',
+        'js-data',
+        'ui.calendar',
+        'firebase'
+        
+    ])
+    
 }())

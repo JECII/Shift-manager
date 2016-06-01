@@ -1,7 +1,7 @@
 (function () {
     angular.module('shiftManager')
         .component('createScheduleComponent', {
-            templateUrl: 'app/components/create-schedule/create-schedule-component.html',
+            templateUrl: 'public/templates/create-schedule-component.html',
             // controller: MainController,
         })
 } ())

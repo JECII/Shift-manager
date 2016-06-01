@@ -1,7 +1,7 @@
 (function () {
     angular.module('shiftManager')
         .component('managerDashboardComponent', {
-            templateUrl: 'app/components/manager-dashboard/manager-dashboard-component.html',
+            templateUrl: 'public/templates/manager-dashboard-component.html',
             controller: managerDashboardController,
         })
 

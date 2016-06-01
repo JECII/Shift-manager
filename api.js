@@ -1,88 +1,88 @@
-function () {
+(function () {
 
 	var router = require('express').Router();
 	var db = require('./db');
 
-router.route('/lists/:id?')
-.get(getLists)
-.post(createList)
-.put(updateList)
+// router.route('/managers/:id?')
+// .get(getManagers)
+// .post(createManager)
+// .put(updateManager)
 
-router.route('/cards/:id?')
-.get(getCards)
-.post(createCard)
-.put(updateCard)
+router.route('/employees/:id?')
+.get(getEmployees)
+.post(createEmployee)
+.put(updateEmployee)
 
 	
 	router.use(defaultErrorHandler);
 
-	function getLists(req, res, next) {
+	// function getManagers(req, res, next) {
 
-		db.getLists().then(
-			function (lists) {
+	// 	db.getMangers().then(
+	// 		function (managers) {
+	// 			res.json({
+	// 				ok: true,
+	// 				data: managers
+	// 			});
+	// 		}
+	// 	);
+	// }	
+	
+	// function createManager(req, res, next) {
+
+	// 	db.addManager(req.body.name, req.body.description).then(
+	// 		function (manager) {
+	// 			res.json({
+	// 				ok: true,
+	// 				data: manager
+	// 			});
+	// 		}
+	// 	);
+	// }	
+	
+	// function updateManager(req, res, next) {
+
+	// 	db.saveManager(req.body).then(
+	// 		function (manager) {
+	// 			res.json({
+	// 				ok: true,
+	// 				data: manager
+	// 			});
+	// 		}
+	// 	);
+	// }
+	
+	function getEmployees(req, res, next) {
+
+		db.getEmployees().then(
+			function (employees) {
 				res.json({
 					ok: true,
-					data: lists
+					data: employees
 				});
 			}
 		);
 	}	
 	
-	function createList(req, res, next) {
+	function createEmployee(req, res, next) {
 
-		db.addList(req.body.name, req.body.description).then(
-			function (list) {
+		db.addEmployee(req.body.summary, req.body.detail).then(
+			function (employee) {
 				res.json({
 					ok: true,
-					data: list
+					data: employee
 				});
 			}
 		);
 	}	
 	
-	function updateList(req, res, next) {
+	function updateEmployee(req, res, next) {
 
-		db.saveList(req.body).then(
-			function (list) {
+		db.saveEmployee(req.body).then(
+			function (employee) {
 				res.json({
 					ok: true,
-					data: list
-				});
-			}
-		);
-	}
-	
-	function getCards(req, res, next) {
-
-		db.getCards().then(
-			function (cards) {
-				res.json({
-					ok: true,
-					data: cards
-				});
-			}
-		);
-	}	
-	
-	function createCard(req, res, next) {
-
-		db.addCard(req.body.summary, req.body.detail).then(
-			function (card) {
-				res.json({
-					ok: true,
-					data: card
-				});
-			}
-		);
-	}	
-	
-	function updateCard(req, res, next) {
-
-		db.saveCard(req.body).then(
-			function (card) {
-				res.json({
-					ok: true,
-					data: card
+					data: employee
 				});
 			}
 		);

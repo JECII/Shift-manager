@@ -1,7 +1,7 @@
 (function () {
     angular.module('shiftManager')
         .component('employeeComponent', {
-            templateUrl: 'app/components/employee/employee-component.html',
+            templateUrl: 'public/templates/employee-component.html',
             // controller: MainController,
         })
 } ())

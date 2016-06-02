@@ -2,9 +2,15 @@
 
 (function () {
   angular.module('shiftManager')
-    .config(function ($stateProvider, $urlRouterProvider) {
+    .config(function ($stateProvider, $urlRouterProvider, DSFirebaseAdapterProvider) {
+      DSFirebaseAdapterProvider.defaults.basePath = 'https://keeprio.firebaseio.com' 
+      
 
       $stateProvider
+        .state('home', {
+          url: '',
+          template:'hello'
+        })
         .state('auth', {
           abstract: true,
           template: '<div class="content"><ui-view></ui-view></div>',
@@ -46,5 +52,8 @@
           url: '/updates',
           template: '<updates-component></update-component>'
         })
+    })
+    .run(function(DS, DSFirebaseAdapter){
+      // DS.registerAdapter('firebase', DSFirebaseAdapter, { default: true });
     })
 } ())

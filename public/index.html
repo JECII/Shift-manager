@@ -5,19 +5,22 @@
   <meta charset="UTF-8">
   <title>Shift Manager</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css" />
+  <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.7.2/fullcalendar.min.js" />-->
   <link rel="stylesheet" href="assets/stylesheet/manager-stylesheet.css">
-  <link rel="stylesheet" href="assets/stylesheet/style.css">
-  <link rel="stylesheet" href="assets/stylesheet/auth.css">
 </head>
 
 <body>
 
   <auth-component></auth-component>
   <ui-view> </ui-view>
-  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
   <!--SCRIPTS FOR ANGULAR UI CALENDAR-->
-  <script src="bower_components/angular/angular.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <!--<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.7.2/fullcalendar.min.js"></script>-->
+
+  <!--<script src="bower_components/angular/angular.js"></script>-->
+
   <script type="text/javascript" src="bower_components/moment/min/moment.min.js"></script>
   <script type="text/javascript" src="bower_components/angular-ui-calendar/src/calendar.js"></script>
   <script type="text/javascript" src="bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
@@ -29,26 +32,23 @@
   <script src="bower_components/js-data-angular/dist/js-data-angular.js"></script>
   <script src="bower_components/js-data-http/dist/js-data-http.min.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-  <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
 
-
-  <script src="init.js"></script>
+  <script src="app/config/init.js"></script>
   <script src="app/config/routes.js"></script>
-  <script src="app/config/data-adapter.js"></script>
 
-  <script src="app/components/auth/main-component.js"></script>
-  <script src="public/components/alerts/alerts-component.js"></script>
-  <script src="public/components/create-schedule/create-schedule-component.js"></script>
-  <script src="public/components/employee/employee-component.js"></script>
-  <script src="public/components/manager-dashboard/manager-dashboard-component.js"></script>
-  <script src="public/components/requests/requests-component.js"></script>
-  <script src="public/components/shift-swap/shift-swap-component.js"></script>
-  <script src="public/components/staff-dashboard/staff-dashboard-component.js"></script>
-  <script src="public/components/updates/updates-component.js"></script>
-
-  <script src="public/components/add-staff/add-staff-component.js"></script>
+  <script src="app/components/auth/auth-component.js"></script>
+  <script src="app/components/alerts/alerts-component.js"></script>
+  <script src="app/components/create-schedule/create-schedule-component.js"></script>
+  <script src="app/components/employee/employee-component.js"></script>
+  <script src="app/components/manager-dashboard/manager-dashboard-component.js"></script>
+  <script src="app/components/requests/requests-component.js"></script>
+  <script src="app/components/shift-swap/shift-swap-component.js"></script>
+  <script src="app/components/staff-dashboard/staff-dashboard-component.js"></script>
+  <script src="app/components/updates/updates-component.js"></script>
+  <script src="app/components/add-staff/add-staff-component.js"></script>
 
 
+  
 </body>
 
 </html>

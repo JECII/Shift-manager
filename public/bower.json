@@ -23,7 +23,7 @@
     "js-data": "^2.9.0",
     "js-data-http": "^2.2.2",
     "angular-ui-calendar": "^1.0.1",
-    "firebase": "^3.0.3",
+    "firebase": "2.x",
     "js-data-firebase": "^2.1.1",
     "js-data-angular": "^3.2.1"
   },

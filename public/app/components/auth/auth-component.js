@@ -1,11 +1,12 @@
 (function () {
-    angular.module('shiftManager')
-        .component('mainComponent', {
-            templateUrl: 'templates/auth-component.html',
-            controller: MainController,
-        })
-        
-        .service('MemberService', function () {
+	angular.module('shiftManager')
+		.component('authComponent', {
+			templateUrl: '/templates/auth-component.html',
+			controller: function(){
+				
+			},
+		})
+		.service('MemberService', function () {
 			var as = this;
 			var db = new Firebase('https://keeprio.firebaseio.com/');
 			var _member = {};
@@ -19,8 +20,8 @@
 			as.getMember = function () {
 				return _member
 			}
-			
-			as.getAuth = function(){
+
+			as.getAuth = function () {
 				return db.getAuth()
 			}
 		})
@@ -108,13 +109,13 @@
 		}
 
 	}
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
+
 } ())

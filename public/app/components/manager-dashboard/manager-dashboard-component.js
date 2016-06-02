@@ -64,7 +64,7 @@
                 },
                 // dayClick: mc.dayClick,
                  eventDrop: function(arg1, arg2, arg3){
-                     debugger
+                     
                      console.log(arg3);
                  }
                 // eventResize: mc.eventResize

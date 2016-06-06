@@ -2,9 +2,7 @@
 	angular.module('shiftManager')
 		.component('authComponent', {
 			templateUrl: '/templates/auth-component.html',
-			controller: function(){
-				
-			},
+			controller: AuthController,
 		})
 		.service('MemberService', function () {
 			var as = this;

@@ -8,7 +8,7 @@
 	var store = new JSData.DS();
 	// var schemator = new Schemator();
 	var adapter = new DSSqlAdapter({
-		lient: 'mysql',
+		client: 'mysql',
 			acquireConnectionTimeout: 10000,
 			connection: {
 				host:"127.0.0.1",
